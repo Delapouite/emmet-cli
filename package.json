@@ -1,0 +1,16 @@
+{
+  "name": "emmet-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "emmet": "index.js"
+  },
+  "scripts": {},
+  "author": "Delapouite <delapouite@gmail.com> (http://delapouite.com)",
+  "license": "ISC",
+  "dependencies": {
+    "@emmetio/expand-abbreviation": "^0.6.0",
+    "@emmetio/snippets": "^0.2.9"
+  }
+}
