@@ -1,13 +1,21 @@
 {
   "name": "emmet-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Emmet command line interface",
+  "keywords": [
+    "emmet",
+    "kakoune"
+  ],
   "main": "index.js",
   "bin": {
     "emmet": "index.js"
   },
   "scripts": {},
   "author": "Delapouite <delapouite@gmail.com> (http://delapouite.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Delapouite/emmet-cli.git"
+  },
   "license": "ISC",
   "dependencies": {
     "@emmetio/expand-abbreviation": "^0.6.0",
