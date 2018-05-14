@@ -6,9 +6,10 @@
 
 ```
 $ emmet abbr
+$ echo abbr | emmet
 ```
 
-Example:
+Examples:
 
 ```
 $ emmet '#foo>span.bar*3'
@@ -25,10 +26,32 @@ outputs on `stdout`:
 
 ```
 
+```
+$ echo '!' | emmet
+```
+
+outputs on `stdout`:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+```
+
 ## Install
 
 ```
 $ npm i -g emmet-cli
+$ yarn global add emmet-cli
 ```
 
 ## About
@@ -38,12 +61,13 @@ It aims mainly at working with HTML easier.
 
 It's written in JavaScript so there's no easy way run it without `node.js`.
 
-This module is currently a dead simple (like 5 lines of code) way to use the compiler
+This module is currently a dead simple (like 10 lines of code) way to use the compiler
 as a CLI. It uses a few modules from [@emmet-io](https://www.npmjs.com/~emmetio) which
 is an effort for emmet 2.x to decouple all its internal bits.
 
-My main usage currently is with [kakoune](http://kakoune.org)'s `!` command, which
-blindly insert the output of `emmet` into the current buffer.
+My main usage currently is with [kakoune](http://kakoune.org)'s `!` command which
+blindly insert the output of `emmet` into the current buffer or the `|` command which
+pipes selections contents to `emmet`'s stdin.
 
 In the future, I'll try to improve this scenario further by combining with cool stuff
 like [phantom selectons](https://github.com/occivink/kakoune-phantom-selection).
