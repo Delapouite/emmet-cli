@@ -3,11 +3,12 @@
 const { argv, stdin } = process
 const { expand } = require('@emmetio/expand-abbreviation')
 const { html: snippets } = require('@emmetio/snippets')
+const field = (index, placeholder) => `\${${index}${placeholder ? ':' + placeholder : ''}}`;
 
 let abbr = ''
 if (argv[2]) {
   abbr = argv[2]
-  console.log(expand(abbr, { snippets }))
+  console.log(expand(abbr, { snippets, field }))
 } else {
   stdin.setEncoding('utf8')
 
@@ -18,5 +19,5 @@ if (argv[2]) {
     }
   })
 
-  stdin.on('end', () => console.log(expand(abbr, { snippets })))
+  stdin.on('end', () => console.log(expand(abbr, { snippets, field })))
 }
