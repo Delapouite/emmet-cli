@@ -47,6 +47,22 @@ outputs on `stdout`:
 </html>
 ```
 
+Use the `-p` flag to include placeholders in the output:
+
+```
+$ echo '#foo>span.bar*3' | emmet -p
+```
+
+outputs on `stdout`:
+
+```
+<div id="foo">
+	<span class="bar">${1}</span>
+	<span class="bar">${2}</span>
+	<span class="bar">${3}</span>
+</div>
+```
+
 ## Install
 
 ```
