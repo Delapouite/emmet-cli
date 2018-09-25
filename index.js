@@ -3,16 +3,17 @@
 const { argv, stdin } = process
 const { expand } = require('@emmetio/expand-abbreviation')
 const { html: snippets } = require('@emmetio/snippets')
-const field = (index, placeholder) => `\${${index}${placeholder ? ':' + placeholder : ''}}`;
+const field = (index, placeholder) =>
+  `\${${index}${placeholder ? ':' + placeholder : ''}}`
 
 let expand_args = { snippets }
 let abbr = ''
 if (argv[2]) {
   if (argv[2] === '-p') {
-      expand_args = {snippets, field}
-      if (argv[3]) {
-          abbr = argv[3]
-      }
+    expand_args = { snippets, field }
+    if (argv[3]) {
+      abbr = argv[3]
+    }
   }
 }
 if (abbr !== '') {

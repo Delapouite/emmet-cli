@@ -63,6 +63,9 @@ outputs on `stdout`:
 </div>
 ```
 
+These syntax should be compatible with snippets formats like the
+one used by [lsp servers](https://github.com/Microsoft/language-server-protocol/blob/master/snippetSyntax.md)
+
 ## Install
 
 ```
@@ -91,6 +94,10 @@ like [phantom selectons](https://github.com/occivink/kakoune-phantom-selection).
 According to its README, the [HTML matcher](https://www.npmjs.com/package/@emmetio/html-matcher)
 would be a nice way to grab coordinates that may be turned into [text-objects](https://github.com/Delapouite/kakoune-text-objects),
 but the `findPair` function is nowhere to be found (yet).
+
+## See Also
+
+- [kakoune-snippets](https://github.com/JJK96/kakoune-snippets)
 
 ## License
 
