@@ -1,3 +1,4 @@
+#!/bin/sh
 [ $(node index.js 'div') = '<div></div>' ] && echo -n 'ok' || echo -n 'ko'
 echo ' with arg'
 
