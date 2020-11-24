@@ -84,6 +84,9 @@ This module is currently a dead simple (like 10 lines of code) way to use the co
 as a CLI. It uses a few modules from [@emmet-io](https://www.npmjs.com/~emmetio) which
 is an effort for emmet 2.x to decouple all its internal bits.
 
+- https://www.npmjs.com/package/@emmetio/expand-abbreviation
+- https://www.npmjs.com/package/@emmetio/snippets
+
 My main usage currently is with [kakoune](http://kakoune.org)'s `!` command which
 blindly insert the output of `emmet` into the current buffer or the `|` command which
 pipes selections contents to `emmet`'s stdin.

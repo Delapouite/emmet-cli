@@ -18,7 +18,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@emmetio/expand-abbreviation": "^0.6.0",
-    "@emmetio/snippets": "^0.2.9"
+    "@emmetio/expand-abbreviation": "^0.7.3",
+    "@emmetio/snippets": "^0.2.12"
   }
 }
