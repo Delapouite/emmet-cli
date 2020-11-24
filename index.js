@@ -1,30 +1,32 @@
 #!/usr/bin/env node
 
-const { argv, stdin } = process
+const minimist = require('minimist')
 const { expand } = require('@emmetio/expand-abbreviation')
 const { html: snippets } = require('@emmetio/snippets')
 const field = (index, placeholder) =>
   `\${${index}${placeholder ? ':' + placeholder : ''}}`
 
-let expandArgs
+const argv = minimist(process.argv.slice(2), { boolean: ['p', 'x'] })
+
 let abbr
+if (argv._.length) {
+  abbr = argv._[0]
+}
 
-switch(argv[2]) {
-  case '-p':
-    expandArgs = { snippets, field }
-    if (argv[3]) {
-      abbr = argv[3]
-    }
-    break
-
-  default:
-    expandArgs = { snippets }
-    abbr = argv[2]
+let expandArgs = { snippets }
+if (argv.p) {
+  expandArgs.field = field
+}
+if (argv.x) {
+  expandArgs.profile = {
+    selfClosingStyle: 'xhtml'
+  }
 }
 
 if (abbr) {
   console.log(expand(abbr, expandArgs))
 } else {
+  const { stdin } = process
   abbr = ''
   stdin.setEncoding('utf8')
   stdin.on('readable', () => {
